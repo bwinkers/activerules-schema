@@ -1,0 +1,6 @@
+{
+  "name": "integer",
+  "metatype": "number",
+  "description": "A JSON A JSON number without a fraction or exponent part.",
+  "url": "http://activerules.com/types/integer"
+}

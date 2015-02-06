@@ -1,0 +1,48 @@
+{
+  "array": {
+    "description": "A JSON array.",
+    "url": "http://activerules.com/type",
+    "sameAs": "http://schema.org/DataType"
+  },
+  "boolean": {
+    "description": "A JSON boolean. True or False.",
+    "url": "http://activerules.com/types/boolean",
+    "sameAs": "http://schema.org/Boolean"
+  },
+  "number": {
+    "description": "Any JSON number. Number includes integer.",
+    "url": "http://activerules.com/types/number",
+    "sameAs": "http://schema.org/Number"
+  },
+  "null": {
+    "description": "The JSON null value.",
+    "url": "http://activerules.com/types/null",
+    "sameAs": "http://schema.org/Boolean"
+  },
+  "object": {
+    "description": "A JSON object.",
+    "url": "http://activerules.com/types/object"
+  },
+  "string": {
+    "description": "A JSON string.",
+    "url": "http://activerules.com/types/string",
+    "alternateName": "text",
+    "sameAs": "http://schema.org/Text"
+  },
+  "date": {
+    "description": "A date value in ISO 8601 date format.",
+    "url": "http://activerules.com/types/date",
+    "sameAs": ["http://schema.org/Date", "http://en.wikipedia.org/wiki/ISO_8601"]
+  },
+  "dateTime": {
+    "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] (see Chapter 5.4 of ISO 8601).",
+    "url": "http://activerules.com/types/datetime",
+    "sameAs": "http://schema.org/DateTime"
+  },
+  "time": {
+    "description": "A point in time recurring on multiple days in the form hh:mm:ss[Z|(+|-)hh:mm] (see XML schema for details).",
+    "url": "http://activerules.com/types/time",
+    "sameAs": ["http://schema.org/Time", "http://www.w3.org/TR/xmlschema-2/#time"]
+  }
+
+}

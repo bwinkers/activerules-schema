@@ -1,0 +1,7 @@
+{
+  "metatype": "thing",
+  "name": "person",
+  "description": "A person (alive, dead, undead, or fictional).",
+  "url": "http://activerules.com/person",
+  "sameAs": "http://schema.org/Person"
+}
