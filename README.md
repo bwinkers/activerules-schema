@@ -1,4 +1,3 @@
-# activerules-schema
 ActiveRules Schema
 ==================
 
