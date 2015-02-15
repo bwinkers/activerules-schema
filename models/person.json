@@ -1,0 +1,305 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://activerules.com/dataencyclopedia/object/person-schema.json#",
+  "title": "Person",
+  "description": "A person (alive, dead, undead, or fictional).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "nugget.json#"
+    }
+  ],
+  "properties": {
+    "metaType": "person",
+    "additionalName": {
+      "type": "text",
+      "description": "An additional name for a Person, can be used for a middle name."
+    },
+    "address": {
+      "type": "array",
+      "items": {"$ref": "nugget/place/postalAddress.json#"},
+      "description": "Physical address of the person."
+    },
+    "affiliation": {
+      "type": "array",
+      "items": {"$ref": "nugget/organization.json#"},
+      "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team."
+    },
+    "alumniOf": {
+      "type": "array",
+      "items": {"$ref": "nugget/organization.json#"},
+      "description": "An educational organizations that the person is an alumni of."
+    },
+    "EducationalOrganization": {
+      "type": "array",
+      "items": {"$ref": "nugget/organization.json#"},
+      "description": "Inverse property: alumni."
+    },
+    "award": {
+      "type": "array",
+      "items": {"$ref": "nugget/award.json#"},
+      "description": "Inverse property: alumni."
+    },
+    "birthDate": {
+      "type": "string",
+      "format": "date-time.date",
+      "description": "Date of birth."
+    },
+    "birthPlace": {
+      "type": {"$ref": "nugget/place.json#"},
+      "description": "The place where the person was born."
+    },
+    "brand": {
+      "type": "array",
+      "items": "string",
+      "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person."
+    },
+    "children": {
+      "type": "array",
+      "items": {"$ref": "nugget/person.json#"},
+      "description": "A child of the person."
+    },
+    "colleague": {
+      "type": "array",
+      "items": {"$ref": "nugget/person.json#"},
+      "description": "A colleague of the person."
+    },
+    "contactPoint": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/person.json#"},
+          {"$ref": "nugget/organization.json#"}
+        ]
+      },
+      "description": "A contact point for a person."
+    },
+    "deathDate": {
+      "type": "string",
+      "format": "date-time.date",
+      "description": "Date of death."
+    },
+    "deathPlace": {
+      "type": {"$ref": "nugget/place.json#"},
+      "description": "The place where the person died."
+    },
+    "duns": {
+      "type": "text",
+      "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person."
+    },
+    "email": {
+      "type": "text",
+      "format": "email",
+      "description": "Email address."
+    },
+    "familyName": {
+      "type": "text",
+      "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property."
+    },
+    "faxNumber": {
+      "type": "text",
+      "format": "telephone",
+      "description": "The fax number."
+    },
+    "follows": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/person.json#"},
+          {"$ref": "nugget/organization.json#"}
+        ]
+      },
+      "description": "The most generic uni-directional social relation."
+    },
+    "gender": {
+      "type": "text",
+      "description": "Gender of the person."
+    },
+    "givenName": {
+      "type": "text",
+      "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property."
+    },
+    "globalLocationNumber": {
+      "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "type": "text"
+    },
+    "hasPOS": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/place.json#"},
+          {"$ref": "nugget/place/contactPoint.json#"}
+        ]
+      },
+      "description": "Points-of-Sales operated by the organization or person."
+    },
+    "height": {
+      "type": "number",
+      "format": {
+        "enum": [
+          "distance",
+          "quantitiveValue"
+        ]
+      },
+      "description": "The height of the person"
+    },
+    "homeLocation": {
+      "description": "A contact location for a person's residence.",
+      "type": {
+        "oneOf": [
+          {"$ref": "nugget/place.json#"},
+          {"$ref": "nugget/address.json#"}
+        ]
+      }
+    },
+    "honorificPrefix": {
+      "type": "text",
+      "description": "AAn honorific prefix preceding a Person's name such as Dr/Mrs/Mr."
+    },
+    "honorificSuffix": {
+      "type": "text",
+      "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW."
+    },
+    "interactionCount": {
+      "type": "array",
+      "items": {"$ref": "nugget/interactionCount.json#"},
+      "description": "A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction."
+    },
+    "isicV4": {
+      "type": "text",
+      "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular business person."
+    },
+    "jobTitle": {
+      "type": "string",
+      "definition": "The job title of the person (for example, Financial Manager)."
+    },
+    "knows": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/person.json#"},
+          {"$ref": "nugget/organization.json#"}
+        ]
+      },
+      "description": "The most generic bi-directional social/work relation."
+    },
+    "makesOffer": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/offer.json#"}
+        ]
+      }
+    },
+    "memberOf": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/organization.json#"},
+          {"$ref": "nugget/programMembership.json#"}
+        ]
+      },
+      "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs."
+    },
+    "naics": {
+      "type": "text",
+      "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person."
+    },
+    "nationality": {
+      "type": "string",
+      "description": "Nationality of the person."
+    },
+    "netWorth": {
+      "type": "string",
+      "format": "price",
+      "description": "The total financial value of the person as calculated by subtracting assets from liabilities."
+    },
+    "owns": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/generic.json#"},
+          {"$ref": "nugget/product.json#"},
+          {"$ref": "nugget/ownershipInfo.json#"}
+        ],
+        "description": "Things owned by the person."
+      }
+    },
+    "parent": {
+      "type": "array",
+      "items": {"$ref": "nugget/person.json#"},
+      "description": "A parent of this person."
+    },
+    "performerIn": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/creativeWork.json#"},
+          {"$ref": "nugget/event.json#"}
+        ],
+        "description": "Event that this person is a performer or participant in."
+      }
+    },
+    "relatedTo": {
+      "type": "array",
+      "items": {"$ref": "nugget/person.json#"},
+      "description": "The most generic familial relation."
+    },
+    "seeks": {
+      "type": "array",
+      "items": {"$ref": "nugget/demand.json"},
+      "description": "A pointer to products or services sought by the organization or person (demand)."
+    },
+    "sibling": {
+      "type": "array",
+      "items": {"$ref": "nugget/person.json#"},
+      "description": "A sibling of the person. Supersedes siblings."
+    },
+    "spouse": {
+      "type": "array",
+      "items": {"$ref": "nugget/person.json#"},
+      "description": "The person's spouse, or spouses."
+    },
+    "taxID": {
+      "type": "text",
+      "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain."
+    },
+    "telephone": {
+      "type": "array",
+      "items": {"$ref": "nugget/telephone.json#"},
+      "description": "Telephone number."
+    },
+    "vatID": {
+      "type": "text",
+      "description": "The Value-added Tax ID of the organization or person."
+    },
+    "weight": {
+      "type": "string",
+      "description": "The weight of the person."
+    },
+    "workLocation": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/place.json#"},
+          {"$ref": "nugget/place/contactPoint.json#"}
+        ]
+      },
+      "description": "A contact location for a person's place of work."
+    },
+    "worksFor": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/person.json#"},
+          {"$ref": "nugget/organization.json#"}
+        ]
+      },
+      "description": "Employer"
+    }
+  },
+  "required": [
+    "id",
+    "name"
+  ]
+}

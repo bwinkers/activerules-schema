@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://activerules.com/dataencyclopedia/object/nugget-schema.json#",
+  "title": "ActiveRules Nugget Schema",
+  "description": "A 'Thing' wrapped in ActiveRule goodness.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "thing.json#"
+    }
+  ],
+  "properties": {
+    "metaType": {
+      "description": "A string representing one of the defined root objects. used to validate the metaObject",
+      "enum": [
+        "action",
+        "person",
+        "organization",
+        "event",
+        "place",
+        "intangible",
+        "creativeWork",
+        "broadcastService",
+        "item",
+        "generic"
+      ],
+      "default": "nugget"
+    },
+    "metaSchema": {
+      "description": "A root schema. All schema should extend one of these to provide a base level of interoperability",
+      "oneOf": [
+        {"$ref": "nugget/action.json#"},
+        {"$ref": "nugget/person.json#"},
+        {"$ref": "nugget/organization.json#"},
+        {"$ref": "nugget/event.json#"},
+        {"$ref": "nugget/place.json#"},
+        {"$ref": "nugget/intangible.json#"},
+        {"$ref": "nugget/creativeWork.json#"},
+        {"$ref": "nugget/broadcastService.json#"},
+        {"$ref": "nugget/generic.json#"},
+        {"$ref": "nugget/item.json#"}
+      ]
+    },
+    "subtype": {
+      "description": "JSON fragment pointing to the final local schema. A consumer may only use part of this path to interpret the object.",
+      "type": "string"
+    },
+    "subtypeObject": {
+      "description": "An object holding the subtype properties",
+      "type": "object"
+    },
+    "keys": {
+      "description": "Keys controlled by the object",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "nugget/key.json"}
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "metaData",
+    "metaType",
+    "metaObject"
+  ]
+}

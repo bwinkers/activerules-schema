@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://activerules.com/dataencyclopedia/nugget/item-schema.json#",
+  "title": "Person",
+  "description": "A person (alive, dead, undead, or fictional).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "nugget.json#"
+    }
+  ],
+  "properties": {
+    "metaType": "person",
+    "additionalName": {
+      "type": "text",
+      "description": "An additional name for a Person, can be used for a middle name."
+    }
+  }
+}

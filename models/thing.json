@@ -1,36 +1,56 @@
 {
-  "name": {
-    "type": "text",
-    "description": "The name of the item."
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://activerules.com/dataencyclopedia/object/thing-schema.json#",
+  "title": "Thing",
+  "description": "Represents the lowest level object type, everything extends/inherits from this.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "text",
+      "description": "A UUID or other guaranteed unique value"
+    },
+    "name": {
+      "type": "text",
+      "description": "The name of the item."
+    },
+    "description": {
+      "type": "text",
+      "description": "A short description of the item."
+    },
+    "image": {
+      "type": [
+        "url",
+        "imageObject"
+      ],
+      "description": "An image of the item. This can be a URL or a fully described ImageObject."
+    },
+    "url": {
+      "type": "url",
+      "description": "URL of the item.",
+      "url": "https://activerules.com/object/thing",
+      "format": "uri"
+    },
+    "sameAs": {
+      "type": "array",
+      "items": { "type": "url" },
+      "description": "URL of the item.",
+      "sameAs": "http://schema.org/Thing"
+    },
+    "alternateName": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "An alias for the item."
+    },
+    "additionalType": {
+      "type": "array",
+      "items": { "type": "url" },
+      "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally."
+    },
+    "potentialAction": {
+      "type": "array",
+      "items": { "type": "action" },
+      "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role."
+    }
   },
-  "description": {
-    "type": "text",
-    "description": "A short description of the item."
-  },
-  "image": {
-    "type": ["url", "imageObject"],
-    "description": "An image of the item. This can be a URL or a fully described ImageObject."
-  },
-  "url": {
-    "type": "url",
-    "description": "URL of the item.",
-    "url": "https://activerules.com/thing"
-  },
-  "sameAs": {
-    "type": "url",
-    "description": "URL of the item.",
-    "sameAs": "http://schema.org/Thing"
-  },
-  "alternateName": {
-    "type": "text",
-    "description": "An alias for the item."
-  },
-  "additionalType": {
-    "type": "url",
-    "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally."
-  },
-  "potentialAction": {
-    "type": "action",
-    "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role."
-  }
+  "required": ["id"]
 }

@@ -1,0 +1,155 @@
+{
+  "name": "ActiveRules Software Development Contract",
+  "description": "This contract funds the development of ActiveRules.",
+  "metaType": "smartContract",
+  "properties": {
+    "party": {
+      "developers": {
+        "description": "Developers who should be rewarded.",
+        "lead": {
+          "brian": {
+            "email": "bwinkers@gmail.com",
+            "github": "http://github.com/bwinkers",
+            "paymentAddress": "2JLVR46xiAN9Ji6mRAbEWQaRpyX4pCYoQf"
+          }
+        },
+        "major": {
+          "shadow": {
+            "email": "shadowcat@netmail.cc",
+            "paymentAddress": "2JwDo5m8qt68vED6ioLJbG6TGjFeBBNJ7w"
+          },
+          "sparky-worldwide": {
+            "email": "sparky@netmail.cc",
+            "paymentAddress": "2BEXJy5uKqi5xwgqWxASNsowb8pJaFJnG5"
+          }
+        },
+        "minor": {
+          "shadow": {
+            "email": "lucy@netmail.cc",
+            "paymentAddress": "2AFdw6mGVh6c7nxZNAXmsZCUokHkqTKKrz"
+          },
+          "sparky-worldwide": {
+            "email": "nugget@netmail.cc",
+            "paymentAddress": "2LWwj8WJ2dQwoAMxqbNDWrnBKEELBDXAps"
+          }
+        },
+        "contributors": {
+            "definition": "These are derived from the GitHub master merge log for the project."
+        }
+      },
+      "paymentRecipient": {
+        "paymentAddress": "1K2apPdHdaa7HjCC7hQZZtCP2d6f8FeuwT"
+      }
+    },
+    "item": [
+      {
+        "item_1": {
+          "number": "1",
+          "name": "Collection of Proceeds",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "All software fees and bounty contributions get sent to the paymentRecipient."
+            }
+          ]
+        }
+      },
+      {
+        "item_2": {
+          "number": "2",
+          "name": "Distribution of Proceeds",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "The proceeds are distributed based upon changes in the Github project."
+            }
+          ]
+        }
+      },
+      {
+        "item_2_2": {
+          "number": "2.2",
+          "name": "Timing of Payouts",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "There are two type of payouts:"
+            },
+            {
+              "type": "item",
+              "value": "Bounties"
+            },
+            {
+              "type": "item",
+              "value": "Milestones"
+            }
+          ]
+        }
+      },
+      {
+        "item_2_2_2": {
+          "number": "2.2.2",
+          "name": "Bounties",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "The bounty for any item will be paid upon acceptance of the code into the master branch."
+            }
+          ]
+        }
+      },
+      {
+        "item_2_2_2": {
+          "number": "2.2.2",
+          "name": "Milestones",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "Milestone payments will be successful completion of each milestone."
+            }
+          ]
+        }
+      },
+      {
+        "item_2_2": {
+          "number": "2.2",
+          "name": "Milestone Payout Breakdown",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "40% will go to lead developers, 30% to major developers, 20% to minor developers, 10% to contributors."
+            },
+            {
+              "type": "text",
+              "value": "For lead and major developers the payouts are split evenly amongst members of the respective group."
+            },
+            {
+              "type": "text",
+              "value": "For minor developers and contributors the payouts are based upon the accumulated commits and bounties for the developer."
+            }
+          ]
+        }
+      }
+    ],
+    "keys": {
+      "description": "Keys required for this transaction"
+    },
+    "scripts": {
+      "milestone": {
+        "description": "Scripts used to process milestone changes."
+      },
+      "bounty": {
+        "description": "Scripts used to verify bounty acceptance."
+      },
+      "party": {
+        "description": "Scripts used to verify changes to the parties."
+      }
+    },
+    "hash": {
+      "description": "The hash of all properties, accept this hash property."
+    }
+  },
+  "definitions": {
+
+  }
+}

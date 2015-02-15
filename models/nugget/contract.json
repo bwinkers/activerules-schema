@@ -1,0 +1,46 @@
+{
+  "name": "Contract",
+  "description": "A Programmable Transaction Contract.",
+  "properties": {
+    "parties": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "nugget/party.json" },
+          { "$ref": "nugget/person.json" },
+          { "$ref": "nugget/organization.json" }
+        ],
+        "default": { "$ref": "nugget/party.json" }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "nugget/item.json" }
+        ]
+      },
+      "description": "Items as defined by OASIS LegalXML eContracts"
+    },
+    "keys": {
+      "description": "Keys controlled by the object",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "nugget/key.json"}
+        ]
+      }
+    },
+    "scripts": {
+      "description": "Scripts used by the object",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "nugget/script.json"}
+        ]
+      }
+    }
+  },
+  "definitions": {
+  }
+}
