@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/schema#",
   "id": "http://activerules.com/dataencyclopedia/object/item-schema.json#",
   "title": "Item",
-  "description": "An item is the basis item",
+  "description": "An item is the basis for all other items",
   "sameAs": "http://docs.oasis-open.org/legalxml-econtracts/CS01/legalxml-econtracts-specification-1.0.html#d0e360",
   "type": "object",
   "allOf": [

@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://activerules.com/dataencyclopedia/object/item-schema.json#",
+  "title": "developmentContract",
+  "description": "Defines the developers, acceptance tests, milestones, payouts, arbitration process, and bounty process.",
+  "sameAs": "http://activerules.com/dataencylopedia/templates/developmentContract",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "nugget.json#"
+    }
+  ],
+  "properties": {
+    "metaType": "agreement",
+    "developers": {
+      "description": "Entities defined as developers. At minimum each needs a BTC address, an email address, a public key  and a GitHub account.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/person.json#"},
+          {"$ref": "nugget/organization.json#"}
+        ]oiii
+      }
+    },
+    "bounties": {
+      "description": "Bounties are paid upon completion based upon the payout rules. Bounties are NOT defined directly in the contract, if they were new contracts would need to be created when they changed.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"$ref": "nugget/bounty/technicalTask.json#"},
+          {"$ref": "nugget/bounty/subjectiveTask.json#"},9
+          {"$ref": "nugget/bounty/systemTask.json#"}
+        ]
+      }
+    },
+    "milestones": {
+      "description": "Milestones are paid upon completion based upon the payout rules. Milestones are defined in the contract, as defined milestones are met the contract progresses.",
+      "type": "array",
+      "items": { "$ref": "nugget/github/milestone.json#" }
+    },
+    "legal": {
+      "license": {
+        "name": "GNU GPL",
+        "url": "https://www.gnu.org/copyleft/lesser.html"
+      },
+      "copyright":
+      {
+       "name": "CC BY",
+        "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode"
+      }
+
+    }
+
+  },
+  "required": [
+    "id",
+    "name",
+    "description",
+    "developers, bounties, milestones, scripts"
+  ],
+  "definitions": []
+}
